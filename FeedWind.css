@@ -136,7 +136,7 @@
     #fw-feed-items{margin:0;padding:0; overflow:hidden; z-index:-999;}
     
 	#fw-feed-items .fw-feed-item{margin:0;padding:10px 0;clear:both;border-bottom: 2px dashed #fbbc05;}
-    #fw-feed-items .fw-feed-item:hover{margin:0;padding:20px 0;clear:both;opacity:0.7;}/***hover時に文字やイメージを透過***/
+    #fw-feed-items .fw-feed-item:hover{opacity:0.7;}/***hover時に文字やイメージを透過***/
     #fw-feed-items .fw-feed-item-url{display: block;overflow: hidden;}
     
       /**#fw-feed-items .fw-feed-multimediaplayer{width:100%;height:auto;}以下の二行をテスト。Youtubeプレーヤーをレスポンシブ対応**/
@@ -148,6 +148,7 @@
 	/**this line added by Divya**/
     #fw-feed-items .fw-feed-item-image{margin:0; padding:0;width:110px;height:100px;overflow:hidden;}
     #fw-feed-items .fw-feed-item-content-module{margin:0 0 0 5px;padding:0 0 0 5px;overflow:hidden;}
+#fw-feed-items .fw-feed-item-content-module{color:#4285f4}
     #fw-feed-items .fw-feed-item-title{margin:0 2px 0 0;padding:0 2px 0 0;color:#222222;line-height:1.2em;font-size:16px;overflow:hidden;display:block;}
     #fw-feed-items .fw-feed-item-description{margin:0 2px 0 0;padding:0 2px 0 0;color:#505659;word-wrap:break-word;line-height:1.3em;font-size:14px;overflow: hidden;display: block;}
     #fw-feed-items .fw-feed-item-date{margin:5px 0 0 0;padding:0;font-size:12px;;color:#505659;overflow:hidden;text-overflow:ellipsis;display:block;}/***非表示の場合はdisplay:none***/
