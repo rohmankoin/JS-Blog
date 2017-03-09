@@ -48,6 +48,18 @@ span.news-text {
     span.news-text{display: none;}
   }
 </style>
+<script>
+function getQueryVariable(variable) {
+	var query = window.location.search.substring(1);
+	var vars = query.split("&");
+	for (var i=0;i<vars.length;i++) {
+		var pair = vars[i].split("=");
+		if(pair[0] == variable){return pair[1];}
+	}
+	return(false);
+}
+var labels = getQueryVariable("label");
+</script>
 <script type='text/javascript'>
 //<![CDATA[
 //Related Post
@@ -64,8 +76,7 @@ var reljudul=new Array();var relurls=new Array();var relcuplikan=new Array();var
 <h4>
 <span>Klik Juga</span>
 </h4>
-<script src='https://mankoin.blogspot.com/feeds/posts/default/-/Blogger?alt=json-in-script&amp;callback=relpostimgcuplik&amp;max-results=50' type='text/javascript'></script>
-<script src='https://mankoin.blogspot.com/feeds/posts/default/-/Template?alt=json-in-script&amp;callback=relpostimgcuplik&amp;max-results=50' type='text/javascript'></script>
+<script src='https://mankoin.blogspot.com/feeds/posts/default/-/'+labels+'?alt=json-in-script&amp;callback=relpostimgcuplik&amp;max-results=50' type='text/javascript'></script>
 <ul>
 <script type='text/javascript'>artikelterkait();</script>
 </ul></div>
