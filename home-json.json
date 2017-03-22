@@ -1,26 +1,20 @@
 {
  "items": [
-{
-    "item": "Harga Smartphone Xiaomi Murah dan Laku ini 4 Alasannya",
-    "url": "https://lensax4.blogspot.co.id/2017/03/Alasan-Xiaomi-Murah.html"
-  },{
-    "item": "Tips Menyimpan Buah-buahan Agar Tetap Segar Dan Awet",
-    "url": "https://lensax4.blogspot.co.id/2017/01/tips-menyimpan-buah-buahan-agar-tetap.html"
-  },{
-    "item": "Cek Aplikasi Android yang Palsu, Hati-hati Sebelum Mengunduhnya",
-    "url": "https://lensax4.blogspot.co.id/2017/03/cek-aplikasi-android-yang-palsu-hati.html"
-  },{
-    "item": "Baru Dirilis, Ini 5 Makna dari Uang Rupiah Baru",
-    "url": "https://lensax4.blogspot.co.id/2016/12/baru-dirilis-ini-5-makna-dari-uang.html"
-  },{
-    "item": "Buah Ciplukan Untuk Menjaga Tekanan Darah",
-    "url": "https://lensax4.blogspot.co.id/2016/12/buah-ciplukan-untuk-menjaga-tekanan.html"
-  },{
-    "item": "Microsoft Edge Mendukung Brotli Compression",
-    "url": "https://lensax4.blogspot.co.id/2016/12/microsoft-edge-mendukung-brotli.html"
-  },{
-    "item": "5 Aplikasi Terbaik Perekam Layar di Android",
-    "url": "https://lensax4.blogspot.co.id/2016/12/perekam-layar-android.html"
-  },
+   {
+     "title": "amp-carousel",
+     "url": "/components/amp-carousel/"
+   },
+   {
+     "title": "amp-img",
+     "url": "/components/amp-img/"
+   },
+   {
+     "title": "amp-ad",
+     "url": "/components/amp-ad/"
+   },
+   {
+     "title": "amp-accordion",
+     "url": "/components/amp-accordion/"
+   }
  ]
 }
