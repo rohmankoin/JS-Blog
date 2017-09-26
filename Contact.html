@@ -1,24 +1,207 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-<meta charset="utf-8"> 
-<title>Contact</title> 
-<meta content='width=device-width, initial-scale=1' name='viewport'> 
-  <style type='text/css'>@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local(Roboto),local(Roboto-Regular),url(https://fonts.gstatic.com/s/roboto/v16/CWB0XYA8bzo0kSThX0UTuA.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215}@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local(Roboto-Bold),url(https://fonts.gstatic.com/s/roboto/v16/d-6IYplOFocCacKzxwXSOFtXRa8TVwTICgirnJhmVJw.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215}body{font-family: Roboto,Arial,sans-serif;margin-top: 20px;font-weight:500}.input{float:none;position:relative;margin-bottom:40px;margin-right:10px}.input input,.input textarea{font-size:15px;padding:15px 0;display:block;width:100%;border:none;border-bottom:1px solid #ddd}.input input:focus,.input textarea:focus{outline:none}.input label{color:#777;font-size:18px;font-weight:400;position:absolute;pointer-events:none;left:0;top:10px;transition:.2s ease all}.bar{position:relative;display:block;width:100%}.bar:before,.bar:after{content:'';height:2px;width:0;bottom:1px;position:absolute;background:#63c;transition:.2s ease all}.bar:before{left:50%}.bar:after{right:50%}.input input:focus ~ .bar:before,.input input:focus ~ .bar:after,.input textarea:focus ~ .bar:before,.input textarea:focus ~ .bar:after{width:50%}.highlight{position:absolute;height:50%;width:100px;top:25%;left:0;pointer-events:none;opacity:.5}.input input:focus ~ .highlight,.input textarea:focus ~ .highlight{animation:inputHighlighter .3s ease}.input input:focus ~ label,.input input:valid ~ label,.input textarea:focus ~ label,.input textarea:valid ~ label{top:-20px;font-size:16px;color:#63c} input#ContactForm1_contact-form-email-message{height:150px} input#ContactForm1_contact-form-submit{color:#fff!important;background:#63c;padding:15px 25px;border-radius:4px;border:none;outline:none;box-shadow:0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);cursor:pointer;transition:all .4s ease-in-out;text-transform:uppercase;float:left;margin-top:15px} input#ContactForm1_contact-form-submit:hover{box-shadow:0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19)} #ContactForm1_contact-form-error-message{float:right;background:#D32F2F;color:#fff;font-size:13px;font-weight:700;border-radius:3px}#ContactForm1_contact-form-success-message{float:right;background:#4CAF50;color:#fff;font-size:13px;font-weight:700;border-radius:3px}</style>
-</head> 
-<body><form name="contact-form" wtx-context="793DA9C9-7622-4C9A-B3F6-BA420B582C97">
-<div class="input">
-<input class="validate" id="ContactForm1_contact-form-name" name="name" required="" type="text" value="" wtx-context="5A80FAE9-5F4E-4835-95B9-35C79762F745" /><span class="highlight"></span><span class="bar"></span><label>Name</label></div>
-<div class="input">
-<input class="validate" id="ContactForm1_contact-form-email" name="email" required="" type="email" value="" wtx-context="B92F8D7B-CEC4-4EA9-ABE9-523B08D9D994" /><span class="highlight"></span><span class="bar"></span><label>Email</label></div>
-<div class="input">
-<textarea class="validate" cols="25" id="ContactForm1_contact-form-email-message" name="email-message" required="" rows="5"></textarea><span class="highlight"></span><span class="bar"></span><label>Message</label></div>
-<input id="ContactForm1_contact-form-submit" type="button" value="Send" wtx-context="2D2F385D-0577-4FC1-8E3E-1077928D4113" /> <br />
-<div id="ContactForm1_contact-form-error-message">
+ <style>
+body{margin:0;padding:0}
+#ss-form input:focus ~ label,
+#ss-form textarea:focus ~ label,
+#ss-form input:valid ~ label,
+#ss-form textarea:valid ~ label {
+  font-size: 0.75em;
+  color: #e8554e;
+  top: -2.25rem;
+  -webkit-transition: all 0.125s ease;
+  transition: all 0.125s ease;
+}
+
+#ss-form .styled-input {
+  width: 33.3333%;
+  margin: 2rem 0 1rem;
+  padding: 0;
+  position: relative;
+}
+
+#ss-form .styled-input-in {
+  position: relative;
+}
+
+#ss-form .styled-input label {
+  color: #999;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  pointer-events: none;
+  line-height: 1;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+#ss-form .styled-input.wide {
+  width: 100%;
+}
+
+#ss-form input,
+#ss-form textarea {
+  padding: 1rem 1rem;
+  border: 1px solid #ddd;
+  width: 100%;
+  font-size: 1rem;
+  background: #fafafa;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+#ss-form input ~ .span1,
+#ss-form textarea ~ .span1 {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #e8554e;
+  position: absolute;
+  left: 50%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#ss-form input ~ .span2,
+#ss-form textarea ~ .span2 {
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #e8554e;
+  position: absolute;
+  right: 50%;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+#ss-form input ~ span {
+  bottom: 0;
+}
+
+#ss-form input:focus,
+#ss-form textarea:focus {
+  outline: 0;
+}
+
+#ss-form input:focus ~ .span1,
+#ss-form textarea:focus ~ .span1,
+#ss-form input:focus ~ .span2,
+#ss-form textarea:focus ~ .span2 {
+  width: 50%;
+}
+
+#ss-form textarea {
+  width: 100%;
+  min-height: 15em;
+}
+
+#ss-form .btn {
+  font-family: "Helvetica", "Arial", sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 0;
+  padding: 0 25px;
+  height: 51px;
+  line-height: 51px;
+  color: #333;
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin: 10px 0 0;
+  background-image: none;
+}
+
+#ss-form .btn-default:hover,
+#ss-form .btn-default:focus {
+  background-color: #e8554e;
+  border: 1px solid #df4f49;
+  color: white;
+  outline: 0;
+}
+
+#fade {
+    opacity: 0;
+  display: none;
+}
+.thanks_layout{text-align: center; position: fixed; top:0; left:0; bottom:0; right:0; background:rgba(255,255,255,.8);z-index:99999}
+.thanks_message{font-family: "Helvetica", "Arial", sans-serif;width:50%;background:#fff;border-radius:5px;padding:20px;border:1px solid #DEDEDE;text-align: center; color:#333; position: absolute; top: 10%; left: 50%;margin-left:-25%;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.thanks_message .close a{position:absolute; top:-15px; right: -15px; width:20px; height:20px; line-height:20px; text-align:center; background:#fff; border:1px solid #ccc; border-radius:100%;color:#333;font-family: "Helvetica", "Arial", sans-serif;font-size:18px;text-decoration:none}
+@media screen and (max-width:768px){.thanks_message{width:90%!important;margin-left:-45%!important;}
+}
+@media screen and (max-width:414px){#ss-form .styled-input {
+  width: 100%;
+}
+}
+</style>
+
+<script type="text/javascript">
+var submitted=false;
+var fadeEffect=function(){
+ return{
+  init:function(id, flag, target){
+   this.elem = document.getElementById(id);
+   clearInterval(this.elem.si);
+   this.target = target ? target : flag ? 100 : 0;
+   this.flag = flag || -1;
+   this.alpha = this.elem.style.opacity ? parseFloat(this.elem.style.opacity) * 100 : 0;
+   this.elem.si = setInterval(function(){fadeEffect.tween()}, 20);
+  },
+  tween:function(){
+   if(this.alpha == this.target){
+    clearInterval(this.elem.si);
+   }else{
+    var value = Math.round(this.alpha + ((this.target - this.alpha) * .05)) + (1 * this.flag);
+    this.elem.style.opacity = value / 100;
+    this.elem.style.filter = 'alpha(opacity=' + value + ')';
+    this.alpha = value
+   }
+  }
+ }
+}();
+function myFunction() {
+    location.reload();
+}
+</script>
+<iframe id="hidden_iframe" name="hidden_iframe" onload="if(submitted){);}" style="display: none;"></iframe>
+            <form action="https://docs.google.com/forms/d/1FAIpQLSdD92erqO2r7b1rmBsfYXTKVoPqTHIBG6WowjyvipDqry0wRg/formResponse" id="ss-form" method="POST" onsubmit="fadeEffect.init('fade', 1);document.getElementById('fade').style.display = 'block'" target="hidden_iframe">
+          <div class="styled-input">
+                        <div class="styled-input-in">
+                <input type="text" aria-label="Name" name="entry.788554157" value="" id="entry.788554157" dir="auto" title="" required="required">
+                                <label>Name</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <div class="styled-input">
+                        <div class="styled-input-in">
+                <input type="email" aria-label="Email" name="entry.815939554" value="" id="entry.815939554" dir="auto" title="Must be a valid email address" required="required">
+                                <label>Email</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <div class="styled-input wide">
+                        <div class="styled-input-in">
+                <textarea aria-label="Message" name="entry.1175190081" rows="8" cols="0" id="entry.839337160" dir="auto" aria-required="true" required="required"></textarea>
+                                <label>Message</label>
+                                <span class="span1"></span><span class="span2"></span>
+            </div>
+          </div>
+          <input name="draftResponse" type="hidden" value="[null,null,&quot;1629734624044165586&quot;]">
+                    <input name="pageHistory" type="hidden" value="0">
+                    <input name="fbzx" type="hidden" value="1629734624044165586">
+          <button type="submit" name="submit" class="btn btn-default">Send</button>
+          </div>
+      </form>
+            <div id="fade">
+<div class="thanks_layout">
+<div class="thanks_message">
+<img alt="Thumb" height="48" width="48" src="https://4.bp.blogspot.com/-rY5km74yj_I/V1ItqrbspBI/AAAAAAAAmxA/SK-aLPTjyuo8uiSYylRJ4tLslk2LJ581QCLcB/s1600/ic_thumb_up_black_24dp_2x.png" />
+        <h2>Form submitted successfully</h2>
+        <div>Jika tidak ada halangan dan kesibukan lainnya, admin akan langsung merespon pesan yang Anda kirimkan.</div>
+        <div class="close"><a href="javascript:void(0)" onclick="document.getElementById('fade').style.display = 'none' ;myFunction()" title="Close">&times;</a></div>
 </div>
-<div id="ContactForm1_contact-form-success-message">
 </div>
-</form>
-<script src="https://www.blogger.com/static/v1/widgets/2271878333-widgets.js" type="text/javascript"></script><script type="text/javascript">//<![CDATA[ if (typeof(BLOG_attachCsiOnload) != 'undefined' && BLOG_attachCsiOnload != null) { window['blogger_templates_experiment_id'] = "templatesV1";window['blogger_blog_id'] = '5590621449936728133';BLOG_attachCsiOnload(''); }_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d5590621449936728133','//manpoin.blogspot.com/','5590621449936728133'); _WidgetManager._RegisterWidget('_ContactFormView', new _WidgetInfo('ContactForm1', 'footer1', null, document.getElementById('ContactForm1'), {'contactFormMessageSendingMsg': '<span style="padding:5px 10px">Sending...</span>', 'contactFormMessageSentMsg': '<span style="padding:5px 10px">Your message has been sent.</span>', 'contactFormMessageNotSentMsg': '<span style="padding:5px 10px">Message could not be sent. Please try again later.</span>', 'contactFormInvalidEmailMsg': '<span style="padding:5px 10px">A valid email address is required.</span>', 'contactFormEmptyMessageMsg': '<span style="padding:5px 10px">Message field cannot be empty.</span>', 'title': 'Contact Form', 'blogId': '5590621449936728133', 'contactFormNameMsg': 'Name', 'contactFormEmailMsg': 'Email', 'contactFormMessageMsg': 'Message', 'contactFormSendMsg': 'Send', 'submitUrl': 'https://www.blogger.com/contact-form.do'}, 'displayModeFull')); //]]></script>
-</body> 
-</html> 
+</div>
